@@ -13,11 +13,11 @@ int main() {
 	do {
 		switch (choose) {
 		case '?':
-			std::cout << "Ââåäèòå\n '1' äëÿ äîáàâëåíèÿ ñëîâà â ñëîâàðü\n '2' äëÿ ïðîâåðêè àâòîçàïîëíåíèÿ\n '3' äëÿ ïðîâåðêè, ÷òî òàêîå ñëîâî åñòü â ñëîâàðå\n '4' äëÿ óäàëåíèÿ ñëîâà\n '5' äëÿ çàâåðøåíèÿ ïðîãðàììû" << std::endl;
+			std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥\n '1' Ã¤Ã«Ã¿ Ã¤Ã®Ã¡Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¿ Ã±Ã«Ã®Ã¢Ã  Ã¢ Ã±Ã«Ã®Ã¢Ã Ã°Ã¼\n '2' Ã¤Ã«Ã¿ Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ¨ Ã Ã¢Ã²Ã®Ã§Ã Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿\n '3' Ã¤Ã«Ã¿ Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ¨, Ã·Ã²Ã® Ã²Ã ÃªÃ®Ã¥ Ã±Ã«Ã®Ã¢Ã® Ã¥Ã±Ã²Ã¼ Ã¢ Ã±Ã«Ã®Ã¢Ã Ã°Ã¥\n '4' Ã¤Ã«Ã¿ Ã³Ã¤Ã Ã«Ã¥Ã­Ã¨Ã¿ Ã±Ã«Ã®Ã¢Ã \n '5' Ã¤Ã«Ã¿ Ã§Ã Ã¢Ã¥Ã°Ã¸Ã¥Ã­Ã¨Ã¿ Ã¯Ã°Ã®Ã£Ã°Ã Ã¬Ã¬Ã»" << std::endl;
 			break;
 
 		case '1':
-			std::cout << "Ââåäèòå ñëîâî: ";
+			std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã±Ã«Ã®Ã¢Ã®: ";
 			std::cin >> input;
 			chat.insert(input);
 			break;
@@ -25,7 +25,7 @@ int main() {
 		case '2': {
 			char inChoose;
 
-			std::cout << "Ââåäèòå ÷àñòü ñëîâà: ";
+			std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã·Ã Ã±Ã²Ã¼ Ã±Ã«Ã®Ã¢Ã : ";
 			cin >> input;
 			chat.searchOption(input);
 			string str;
@@ -34,42 +34,41 @@ int main() {
 				str = chat.get_optionByOne();
 				if (str.empty())
 					continue;
-				std::cout << std::endl << str << " ýòî òî ñëîâî y/n: ";
+				std::cout << std::endl << str << " Ã½Ã²Ã® Ã²Ã® Ã±Ã«Ã®Ã¢Ã® y/n: ";
 				std::cin >> inChoose;
 
 			} while (inChoose != 'y' && !str.empty());
 
 			if (inChoose == 'y')
-				std::cout << "Âàøå ñëîâî: " << str << std::endl;
+				std::cout << "Ã‚Ã Ã¸Ã¥ Ã±Ã«Ã®Ã¢Ã®: " << str << std::endl;
 			else if (inChoose == 'n')
-				std::cout << "Íåòó áîëüøå ïîäõîäÿùèõ ñëîâ " << std::endl;
+				std::cout << "ÃÃ¥Ã²Ã³ Ã¡Ã®Ã«Ã¼Ã¸Ã¥ Ã¯Ã®Ã¤ÃµÃ®Ã¤Ã¿Ã¹Ã¨Ãµ Ã±Ã«Ã®Ã¢ " << std::endl;
 			break;
 		}
 		case '3':
-			std::cout << "Ââåäèòå ñëîâî: ";
+			std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã±Ã«Ã®Ã¢Ã®: ";
 			std::cin >> input;
 			if (chat.search(input))
-				std::cout << "Ñëîâî " << input << " åñòü â ñëîâàðå" << std::endl;
+				std::cout << "Ã‘Ã«Ã®Ã¢Ã® " << input << " Ã¥Ã±Ã²Ã¼ Ã¢ Ã±Ã«Ã®Ã¢Ã Ã°Ã¥" << std::endl;
 			else
-				std::cout << "Ñëîâî " << input << " íåòó â ñëîâàðå" << std::endl;
+				std::cout << "Ã‘Ã«Ã®Ã¢Ã® " << input << " Ã­Ã¥Ã²Ã³ Ã¢ Ã±Ã«Ã®Ã¢Ã Ã°Ã¥" << std::endl;
 			break;
 
 		case '4':
-			std::cout << "Êëþ÷ äëÿ óäàëåíèÿ: ";
+			std::cout << "ÃŠÃ«Ã¾Ã· Ã¤Ã«Ã¿ Ã³Ã¤Ã Ã«Ã¥Ã­Ã¨Ã¿: ";
 			cin >> input;
 			chat.remove(input);
 			break;
 
 		default:
-			std::cout << "Ââåäèòå '?' äëÿ ñïðàâêè" << std::endl;
+			std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ '?' Ã¤Ã«Ã¿ Ã±Ã¯Ã°Ã Ã¢ÃªÃ¨" << std::endl;
 		}
 
-		std::cout << "Ââàø ââîä: ";
+		std::cout << "Ã‚Ã¢Ã Ã¸ Ã¢Ã¢Ã®Ã¤: ";
 		std::cin >> choose;
 		std::cout << std::endl;
 
 	} while (choose != '5');
-
 
 
 	return 0;
